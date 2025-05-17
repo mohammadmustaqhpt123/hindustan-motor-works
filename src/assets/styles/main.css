@@ -138,6 +138,191 @@ footer {
     max-width: 600px;
 }
 
+/* About page styles */
+.about-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.about-section h2 {
+    color: #333;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.about-section ul {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+/* Contact page styles */
+.contact-section {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.contact-details {
+    margin: 1.5rem 0;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #666;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .about-section {
+        padding: 1rem;
+    }
+    
+    .about-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        padding: 0.5rem;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: #333;
+        transition: 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding-top: 70px;
+    }
+
+    nav li {
+        margin: 1rem 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a {
+        padding: 0.5rem 1rem;
+        display: block;
+        width: 100%;
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+
+    /* Adjust header for mobile */
+    header {
+        padding: 1rem;
+    }
+
+    #logo {
+        max-width: 150px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust product grid for mobile */
+    .product-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .hero {
+        padding: 1rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+}
+
 /* Animation Keyframes */
 @keyframes fadeInUp {
     from {

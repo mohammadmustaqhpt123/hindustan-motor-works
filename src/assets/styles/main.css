@@ -220,52 +220,55 @@ button[type="submit"]:hover {
     transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
-    .contact-section {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-    }
-    
-    .about-section {
-        padding: 1rem;
-    }
-    
-    .about-section h2 {
-        font-size: 1.6rem;
-    }
+.nav-toggle {
+    display: none;
+}
 
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.overlay.active {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
     .nav-toggle {
         display: block;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 2rem;
-        cursor: pointer;
         position: fixed;
         top: 1rem;
         right: 1rem;
         z-index: 1000;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
         padding: 0.5rem;
     }
 
-    nav {
+    nav ul {
         position: fixed;
         top: 0;
         right: -100%;
         width: 250px;
         height: 100vh;
         background-color: #333;
+        flex-direction: column;
+        padding-top: 60px;
         transition: 0.3s ease-in-out;
         z-index: 999;
     }
 
-    nav.active {
+    nav ul.active {
         right: 0;
-    }
-
-    nav ul {
-        flex-direction: column;
-        padding-top: 70px;
     }
 
     nav li {
@@ -280,19 +283,17 @@ button[type="submit"]:hover {
         width: 100%;
     }
 
-    .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 998;
+    .contact-section {
+        grid-template-columns: 1fr;
+        padding: 1rem;
     }
-
-    .overlay.active {
-        display: block;
+    
+    .about-section {
+        padding: 1rem;
+    }
+    
+    .about-section h2 {
+        font-size: 1.6rem;
     }
 
     /* Adjust header for mobile */
